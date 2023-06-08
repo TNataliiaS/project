@@ -57,7 +57,7 @@
     @media(max-width: 768px) {
         @supports not (background-image: url("../images/#{$bg}-tablet@1x.webp")) {
             background-image: url("../images/#{$bg}-tablet@1x.#{$extension}");
-          }
+        }
 
         @supports (background-image: url("../images/#{$bg}-tablet@1x.webp")) {
             background-image: url("../images/#{$bg}-tablet@1x.webp");
@@ -77,7 +77,7 @@
     @media(max-width: 414px) {
         @supports not (background-image: url("../images/#{$bg}-mobile@1x.webp")) {
             background-image: url("../images/#{$bg}-mobile@1x.#{$extension}");
-          }
+        }
 
         @supports (background-image: url("../images/#{$bg}-mobile@1x.webp")) {
             background-image: url("../images/#{$bg}-mobile@1x.webp");
