@@ -1681,6 +1681,16 @@ button {
   }
 }
 
+@media screen and (max-width: 992px) and (hover: none) and (pointer: coarse) {
+  .intro {
+    height: 100svh;
+  }
+
+  .intro__wrapper {
+    height: calc(100svh - 62px);
+  }
+}
+
 @media screen and (hover: none) and (pointer: coarse) and (max-width: 992px) {
   .projects__item-content {
     padding: 12px;
@@ -1829,7 +1839,6 @@ button {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    height: 100%;
   }
 
   .intro__list-item {
