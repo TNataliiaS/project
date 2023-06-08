@@ -1,0 +1,23 @@
+@import "./fonts";
+@import "./vars";
+@import "./extends";
+@import "./mixins";
+@import "./base";
+
+/* Components */
+@import "./components/header";
+@import "./components/logo";
+@import "./components/contacts";
+@import "./components/social";
+@import "./components/burger";
+@import "./components/site-nav";
+@import "./components/intro";
+@import "./components/section";
+@import "./components/projects";
+@import "./components/popup";
+@import "./components/footer";
+
+
+@import "./components/about-intro";
+@import "./components/team";
+@import "./components/areas-activity";

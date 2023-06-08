@@ -1,0 +1,118 @@
+html {
+    @extend %custom-scrollbar;
+    &::-webkit-scrollbar {
+        width: 7px;
+    }
+}
+
+body {
+    margin: 0;
+
+    background-color: $primary-color;
+
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 400;
+    color: $color-content;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    @include breakpoint($breakpoint-xxxl) {
+        font-size: 18px;
+    }
+
+    @include breakpoint($breakpoint-xxl) {
+        font-size: 16px;
+    }
+
+    @include breakpoint($breakpoint-md) {
+        font-size: 14px;
+    }
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+input, textarea, select, button {
+    font-family: inherit;
+}
+
+.img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.visually-hidden {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+
+/* Focus-element
+================*/
+:focus {
+    outline: 1px solid $color-content;
+}
+
+:focus:not(:focus-visible) {
+    outline: 0;
+}
+
+:focus-visible {
+    outline: 1px solid $color-content;
+}
+
+
+/* Container
+================*/
+.container {
+    width: 100%;
+    max-width: 1920px;
+    padding: 0 20px;
+    margin: 0 auto;
+
+    @include breakpoint($breakpoint-sm) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}

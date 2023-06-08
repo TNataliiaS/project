@@ -1,0 +1,56 @@
+%flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+%flex-column-sb {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+%flex-align-center {
+    display: flex;
+    align-items: center;
+}
+
+%flex-align-center-sb {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+%position-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+%max-percent-width-height {
+    width: 100%;
+    height: 100%;
+}
+
+%pointer-events-none-opacity {
+    opacity: 0;
+    pointer-events: none;
+}
+
+%pointer-events-auto-opacity {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+%custom-scrollbar {
+    scrollbar-color: $accent-element $primary-color;
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar-track {
+        background: $primary-color;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $accent-element;
+    }
+}

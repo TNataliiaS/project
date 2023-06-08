@@ -1,0 +1,96 @@
+@mixin font-face($font-family, $url, $weight: normal, $style: normal) {
+    @font-face {
+        font-family: $font-family;
+        src: local($font-family),
+             url('../fonts/#{$font-family}/#{$url}.woff2') format('woff2'),
+             url('../fonts/#{$font-family}/#{$url}.woff') format('woff');
+            //  url('../fonts/#{$font-family}/#{$url}.ttf') format('ttf'),
+            //  url('/fonts/#{$font-family}/#{$url}.eot') format('eot');
+        font-weight: $weight;
+        font-style: $style;
+    }
+}
+
+@mixin media-touchscreen-none {
+    @media (hover: hover) and (pointer: fine) {
+        @content;
+    }
+}
+
+@mixin media-touchscreen {
+    @media (hover: none) and (pointer: coarse) {
+        @content;
+    }
+}
+
+@mixin breakpoint($br) {
+    @media screen and (max-width: $br) {
+        @content;
+    }
+}
+
+@mixin breakpoint-height-orientation($br-h) {
+    @media screen and (max-height: $br-h) and (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin retina-bg($bg, $extension: 'png') {
+    @supports not (background-image: url("../images/#{$bg}@1x.webp")) {
+        background-image: url("../images/#{$bg}@1x.#{$extension}");
+    }
+
+    @supports (background-image: url("../images/#{$bg}@1x.webp")) {
+        background-image: url("../images/#{$bg}@1x.webp");
+    }
+
+    @media (min-width: 769px) and (min-resolution: 2dppx) {
+        @supports not (background-image: url("../images/#{$bg}@2x.webp")) {
+          background-image: url("../images/#{$bg}@2x.#{$extension}");
+        }
+
+        @supports (background-image: url("../images/#{$bg}@2x.webp")) {
+          background-image: url("../images/#{$bg}@2x.webp");
+        }
+    }
+
+    @media(max-width: 768px) {
+        @supports not (background-image: url("../images/#{$bg}-tablet@1x.webp")) {
+            background-image: url("../images/#{$bg}-tablet@1x.#{$extension}");
+          }
+
+        @supports (background-image: url("../images/#{$bg}-tablet@1x.webp")) {
+            background-image: url("../images/#{$bg}-tablet@1x.webp");
+        }
+    }
+
+    @media(max-width: 768px) and (min-resolution: 2dppx) {
+        @supports not (background-image: url("../images/#{$bg}-tablet@2x.webp")) {
+            background-image: url("../images/#{$bg}-tablet@2x.#{$extension}");
+        }
+
+        @supports (background-image: url("../images/#{$bg}-tablet@2x.webp")) {
+            background-image: url("../images/#{$bg}-tablet@2x.webp");
+        }
+    }
+
+    @media(max-width: 414px) {
+        @supports not (background-image: url("../images/#{$bg}-mobile@1x.webp")) {
+            background-image: url("../images/#{$bg}-mobile@1x.#{$extension}");
+          }
+
+        @supports (background-image: url("../images/#{$bg}-mobile@1x.webp")) {
+            background-image: url("../images/#{$bg}-mobile@1x.webp");
+        }
+    }
+
+    @media(max-width: 414px) and (min-resolution: 2dppx) {
+        @supports not (background-image: url("../images/#{$bg}-mobile@2x.webp")) {
+            background-image: url("../images/#{$bg}-mobile@2x.#{$extension}");
+        }
+
+        @supports (background-image: url("../images/#{$bg}-mobile@2x.webp")) {
+            background-image: url("../images/#{$bg}-mobile@2x.webp");
+        }
+    }
+}

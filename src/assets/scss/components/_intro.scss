@@ -1,0 +1,258 @@
+.intro {
+    height: 100vh;
+    padding-top: 88px;
+    margin-bottom: 50px;
+    overflow: hidden;
+
+    @include breakpoint($breakpoint-xxxl) {
+        padding-top: 82px;
+    }
+
+    @include breakpoint($breakpoint-xxl) {
+        padding-top: 80px;
+        margin-bottom: 40px;
+    }
+
+    @include breakpoint($breakpoint-xl) {
+        padding-top: 64px;
+    }
+
+    @include breakpoint($breakpoint-lg) {
+        padding-top: 62px;
+    }
+
+    @include breakpoint($breakpoint-md) {
+        margin-bottom: 30px;
+    }
+
+    @include breakpoint-height-orientation($breakpoint-sm) {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    &__wrapper {
+        width: 100%;
+        height: calc(100vh - 88px);
+        padding-top: 7%;
+        padding-bottom: 10%;
+
+        @include retina-bg('intro/intro-bg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        position: relative;
+
+        @include breakpoint($breakpoint-xxxl) {
+            height: calc(100vh - 82px);
+        }
+
+        @include breakpoint($breakpoint-xxl) {
+            height: calc(100vh - 80px);
+        }
+
+        @include breakpoint($breakpoint-xl) {
+            height: calc(100vh - 64px);
+
+            text-align: center;
+        }
+
+        @include breakpoint($breakpoint-lg) {
+            height: calc(100vh - 62px);
+        }
+
+        @include breakpoint($breakpoint-sm) {
+            padding-top: 0;
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        @include breakpoint-height-orientation($breakpoint-sm) {
+            height: auto;
+            min-height: calc(100vh - 62px);
+            padding-bottom: 0;
+            padding-top: 5%;
+        }
+
+        &:before,
+        &:after {
+            content: '';
+            width: 101%;
+            height: 101%;
+
+            @extend %position-center;
+            z-index: 2;
+        }
+
+        &:before {
+            background: linear-gradient(180deg, $primary-color 0%, rgba($primary-color, 0.95) 15%, rgba($primary-color, 0.7) 40%, rgba($primary-color, 0.7) 60%, rgba($primary-color, 0.95) 85%, $primary-color 101%);
+        }
+
+        &:after {
+            background: linear-gradient(270deg, $primary-color 0%, rgba($primary-color, 0.06) 33.33%, rgba($primary-color, 0.05) 66.67%, $primary-color 101%);
+        }
+    }
+
+    &__list-item {
+        font-size: 64px;
+        font-weight: 700;
+        letter-spacing: .05em;
+        text-transform: uppercase;
+
+        position: relative;
+        z-index: 5;
+
+        background: linear-gradient(to right, $color-content 0, rgba($accent-element, .5) 25%, $color-content 35%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 500% auto;
+
+        animation: textShine 5s linear infinite alternate;
+
+        @keyframes textShine {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 25px;
+        }
+
+        @include breakpoint($breakpoint-xxxl) {
+            font-size: 56px;
+
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
+
+        @include breakpoint($breakpoint-xxl) {
+            font-size: 50px;
+        }
+
+        @include breakpoint($breakpoint-xl) {
+            font-size: 42px;
+
+            &:not(:last-child) {
+                margin-bottom: 30px;
+            }
+        }
+
+        @include breakpoint($breakpoint-md) {
+            font-size: 38px;
+        }
+
+        @include breakpoint($breakpoint-sm) {
+            font-size: 30px;
+        }
+
+        @include breakpoint($breakpoint-xs) {
+            font-size: 24px;
+            line-height: 1.4;
+
+            &:not(:last-child) {
+                margin-bottom: 25px;
+            }
+        }
+    }
+
+    &__arrow-down,
+    &__arrow-down:before {
+        border-left: none;
+        border-top: none;
+
+        position: absolute;
+        left: 50%;
+
+        animation-iteration-count: infinite;
+    }
+
+    &__arrow-down {
+        font-size: 0;
+        color: transparent;
+
+        width: 30px;
+        height: 30px;
+        margin: -20px 0 0 -20px;
+
+        border-right: 2px $color-content solid;
+        border-bottom: 2px $color-content solid;
+
+        bottom: 10%;
+        z-index: 10;
+
+        transform: rotate(45deg);
+        animation-duration: 1s;
+        animation-direction: alternate;
+        animation-name: arrow;
+
+        &:before {
+            content: '';
+            width: 15px;
+            height: 15px;
+            margin: -10px 0 0 -10px;
+
+            border-right: 1.2px $color-content solid;
+            border-bottom: 1.2px $color-content solid;
+
+            top: 50%;
+
+            animation-duration: 2s;
+            animation-name: arrow-small;
+
+            @include breakpoint($breakpoint-xxl) {
+                width: 10px;
+                height: 10px;
+            }
+
+            @include breakpoint($breakpoint-xl) {
+                width: 7px;
+                height: 7px;
+                margin: -5px 0 0 -5px;
+            }
+        }
+
+        @include breakpoint($breakpoint-xxl) {
+            width: 25px;
+            height: 25px;
+
+            bottom: 7%;
+        }
+
+        @include breakpoint($breakpoint-xl) {
+            width: 20px;
+            height: 20px;
+            margin: -15px 0 0 -15px;
+        }
+
+        @include breakpoint-height-orientation($breakpoint-sm) {
+            display: none;
+        }
+
+        @keyframes arrow {
+            0% {
+                border-color: $color-content ;
+            }
+            100% {
+                border-color: $accent-element;
+            }
+        }
+
+        @keyframes arrow-small {
+            0% {
+                opacity: 1
+            }
+            100% {
+                border-color: $accent-element;
+
+                opacity: 0;
+                transform: translate(-10px, -10px);
+            }
+        }
+    }
+}

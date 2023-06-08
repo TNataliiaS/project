@@ -1,0 +1,214 @@
+.about-intro {
+    padding-top: 88px;
+    margin-bottom: 60px;
+
+    @include breakpoint($breakpoint-xxxl) {
+        padding-top: 82px;
+    }
+
+    @include breakpoint($breakpoint-xxl) {
+        padding-top: 80px;
+        margin-bottom: 40px;
+    }
+
+    @include breakpoint($breakpoint-xl) {
+        padding-top: 64px;
+    }
+
+    @include breakpoint($breakpoint-lg) {
+        padding-top: 62px;
+    }
+
+    @include breakpoint($breakpoint-md) {
+        margin-bottom: 30px;
+    }
+
+    &__title {
+        margin-top: 4%;
+        margin-bottom: 60px;
+
+        font-size: 52px;
+        font-weight: 700;
+        text-align: center;
+
+        span {
+            text-transform: uppercase;
+        }
+
+        @include breakpoint($breakpoint-xxxl) {
+           margin-top: 3%;
+           font-size: 46px;
+        }
+
+        @include breakpoint($breakpoint-xxl) {
+            margin-bottom: 40px;
+            font-size: 38px;
+        }
+
+        @include breakpoint($breakpoint-xl) {
+            margin-bottom: 30px;
+            font-size: 34px;
+        }
+
+        @include breakpoint($breakpoint-xl) {
+            font-size: 32px;
+        }
+
+        @include breakpoint($breakpoint-md) {
+            font-size: 26px;
+        }
+
+        @include breakpoint($breakpoint-sm) {
+            font-size: 22px;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        max-height: 500px;
+        overflow: hidden;
+        gap: 30px;
+
+        @include breakpoint($breakpoint-xl) {
+            gap: 15px;
+        }
+
+        @include breakpoint($breakpoint-xl) {
+            gap: 10px;
+        }
+
+        @include breakpoint($breakpoint-sm) {
+            flex-direction: column;
+        }
+    }
+
+    &__picture-wrapper {
+        width: 30%;
+        flex-grow: 1;
+        max-width: 555px;
+
+        position: relative;
+
+        &:after {
+            content: '';
+            width: 95%;
+            height: 95%;
+
+            border: 3px solid $accent-element;
+
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+
+            @include breakpoint($breakpoint-lg) {
+                border: 2px solid $accent-element;
+            }
+        }
+
+        @include breakpoint($breakpoint-xxxl) {
+            width: 25%;
+        }
+
+        @include breakpoint($breakpoint-sm) {
+            width: 50%;
+            padding-bottom: 10px;
+        }
+    }
+
+    &__img {
+        width: 96%;
+        height: 96%;
+        margin-left: auto;
+        margin-bottom: auto;
+        object-fit: cover;
+    }
+
+    &__figure {
+        width: 70%;
+        flex-grow: 2;
+        margin: 0;
+        max-width: 1295px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include breakpoint($breakpoint-xxxl) {
+            width: 75%;
+        }
+
+        @include breakpoint($breakpoint-xxl) {
+            padding: 10px;
+        }
+
+        @include breakpoint($breakpoint-md) {
+            width: 100%;
+        }
+    }
+
+    &__blockquote {
+        margin: 0;
+        font-size: 30px;
+
+        @include breakpoint($breakpoint-xxxl) {
+            font-size: 26px;
+        }
+
+        @include breakpoint($breakpoint-xxl) {
+            font-size: 22px;
+        }
+
+        @include breakpoint($breakpoint-xl) {
+            font-size: 18px;
+        }
+
+        @include breakpoint($breakpoint-xl) {
+            font-size: 16px;
+        }
+    }
+
+    &__blockquote-paragraph {
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 7px;
+        }
+    }
+
+    &__figcaption {
+        margin-top: 15px;
+        align-self: flex-end;
+
+        text-align: end;
+
+        @include breakpoint($breakpoint-xl) {
+            font-size: 14px;
+        }
+
+        cite {
+            font-size: 28px;
+            font-weight: 700;
+            font-style: normal;
+
+            @include breakpoint($breakpoint-xxxl) {
+                font-size: 24px;
+                line-height: 1.1;
+            }
+
+            @include breakpoint($breakpoint-xxl) {
+                font-size: 20px;
+            }
+
+            @include breakpoint($breakpoint-xl) {
+                font-size: 18px;
+            }
+
+            @include breakpoint($breakpoint-lg) {
+                font-size: 16px;
+            }
+        }
+    }
+}

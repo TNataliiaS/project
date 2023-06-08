@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include("html/head.html", {
+    "title":"О компании ПКБ ИНСТРУМЕНТ"
+})
+<body>
+    <div class="page">
+        @@include("html/header.html", {
+            "link": '<a class="site-nav__link" href="./index.html">Главная</a>'
+         })
+
+        <!-- Main -->
+        <main>
+
+            <!-- Intro-about -->
+            <div class="about-intro container" id="intro">
+                <h1 class="about-intro__title">Проектно-конструкторское бюро &laquo;<span>инструмент</span>&raquo;</h1>
+
+                <div class="about-intro__wrapper">
+                    <div class="about-intro__picture-wrapper">
+                        <picture>
+                            <source srcset="./assets/images/photo-director.webp" type="image/webp">
+                            <img class="about-intro__img img" src="./assets/images/photo-director.jpg" alt="Артем Корнилов - директор ПКБ ИНСТРУМЕНТ">
+                        </picture>
+                    </div>
+
+                    <figure class="about-intro__figure">
+                        <blockquote class="about-intro__blockquote">
+                            <p class="about-intro__blockquote-paragraph">&laquo;Мы– многопрофильная инжиниринговая компания.</p>
+                            <p class="about-intro__blockquote-paragraph">C 2017 года оказываем большой спектр услуг в области проектирования объектов машиностроения и различного оборудования&raquo;</p>
+                        </blockquote>
+
+                        <figcaption class="about-intro__figcaption">Директор<br> <cite>Артем Корнилов</cite></figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="team container">
+                    <h2 class="section__title">Команда</h2>
+
+                    <div class="team__content">
+                        <p class="team__content-paragraph">Команда из 8 конструкторов-технологов. Все выпускники ИжГТУ им.М.Т.Калашникова. Работают в области машиностроения более 5 лет, а ведущие - более 10.</p>
+                        <p class="team__content-paragraph">Мы способны быстро и эффективно выполнять различные виды работ, находить нестандартные решения в интересах заказчика, оценивать стоимость изготовления на стадии проектирования, выбирать и предлагать наиболее экономиески целесообразные решения.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="section section_last">
+                <div class="areas-activity container">
+                    <h2 class="section__title">Направления деятельности</h2>
+
+                    <ul class="areas-activity__list">
+                        <li class="areas-activity__item">
+                            <h3>Реверс-инжиниринг &laquo;под ключ&raquo;</h3>
+                        </li>
+                        <li class="areas-activity__item">
+                            <h3>Проектирование серийных и специальных станков с ЧПУ</h3>
+                        </li>
+                        <li class="areas-activity__item">
+                            <h3>Проектирование нестандарного и испытательного оборудования</h3>
+                        </li>
+                        <li class="areas-activity__item">
+                            <h3>Разработка конструкторской и технологической документации по ТЗ</h3>
+                        </li>
+                        <li class="areas-activity__item">
+                            <h3>Создание 3d моделей</h3>
+                        </li>
+                        <li class="areas-activity__item">
+                            <h3>Разработка специальной оснастки в том числе станчной</h3>
+                        </li>
+                        <li class="areas-activity__item">
+                            <h3>Поставка и изготовление нестандартного металлорежущего оборудования</h3>
+                        </li>
+                        <li class="areas-activity__item">
+                            <h3>Подготовка технической докментации для экспертизы в ТПП и МинПромТорг технологического обрудования</h3>
+                        </li>
+                        <li class="areas-activity__item">
+                            <h3>НИР, ОКР. Организация производства</h3>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </main>
+
+        @@include("html/footer.html", {
+            "link": '<a class="footer__nav-link" href="./index.html">Главная</a>'
+        })
+    </div>
+
+<!-- JS -->
+<script src="./assets/js/main.min.js"></script>
+</body>
+</html>

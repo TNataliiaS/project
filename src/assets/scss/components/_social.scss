@@ -1,0 +1,81 @@
+.social {
+    @extend %flex-align-center;
+
+    &__item {
+        &:not(:last-of-type) {
+            margin-right: 20px;
+
+            @include breakpoint($breakpoint-xxxl) {
+                margin-right: 16px;
+            }
+        }
+    }
+
+    &__link {
+        display: block;
+        width: 48px;
+        height: 48px;
+
+        @include breakpoint($breakpoint-xxxl) {
+            width: 42px;
+            height: 42px;
+        }
+
+        @include breakpoint($breakpoint-xl) {
+            width: 34px;
+            height: 34px;
+        }
+
+        &_whatsapp {
+            &:hover,
+            &:focus-visible {
+                .social__icon {
+                    fill: #25d366;
+                }
+            }
+
+            &:active {
+                .social__icon {
+                    fill: darken(#25d366, 12%);
+                }
+            }
+        }
+
+        &_telegram {
+            &:hover,
+            &:focus-visible {
+                .social__icon {
+                    fill: #0088cc;
+                }
+            }
+
+            &:active {
+                .social__icon {
+                    fill: darken(#0088cc, 10%);
+                }
+            }
+        }
+
+        &_viber {
+            &:hover,
+            &:focus-visible {
+                .social__icon {
+                    fill: #7360f2;
+                }
+            }
+
+            &:active {
+                .social__icon {
+                    fill: darken(#7360f2, 20%);
+                }
+            }
+        }
+    }
+
+    &__icon {
+        @extend %max-percent-width-height;
+
+        fill: $color-content;
+        transition: fill .15s ease-in-out;
+    }
+}

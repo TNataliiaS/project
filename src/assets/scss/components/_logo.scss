@@ -1,0 +1,30 @@
+.logo {
+    display: inline-block;
+
+    &:hover,
+    &:focus {
+        .logo__img {
+            transform: scale(.99);
+        }
+    }
+
+    &:active {
+        .logo__img {
+            transform: scale(.98);
+        }
+    }
+
+    &__img {
+        height: 45px;
+
+        transition: transform .15s linear;
+
+        @include breakpoint($breakpoint-xxxl) {
+            height: 38px;
+        }
+
+        @include breakpoint($breakpoint-xl) {
+            height: 30px;
+        }
+    }
+}

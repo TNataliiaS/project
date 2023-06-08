@@ -1,0 +1,143 @@
+.header {
+    width: 100%;
+
+    background-color: $primary-color;
+
+    z-index: 100;
+
+    &,
+    &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    &:before {
+        content: '';
+        @extend %max-percent-width-height;
+
+        background: linear-gradient(180deg, rgba($primary-color, 0.95) 0%, $primary-color 100%);
+
+        transition: height .4s linear;
+    }
+
+    &_show {
+        &:before {
+            height: 100vh;
+        }
+    }
+
+    &_fixed {
+        position: fixed;
+
+        animation: fadeInUp .3s ease-in;
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                top: -20px;
+            }
+
+            100% {
+                opacity: 1;
+                top: 0;
+            }
+        }
+
+        .header__wrapper {
+            padding-top: 15px;
+            padding-bottom: 15px;
+
+            @include breakpoint($breakpoint-xs) {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+
+        .header__logo .logo__img {
+            height: 40px;
+
+            @include breakpoint($breakpoint-xxxl) {
+                height: 32px;
+            }
+
+            @include breakpoint($breakpoint-xl) {
+                height: 26px;
+            }
+        }
+
+        .header__social .social__link {
+            width: 44px;
+            height: 44px;
+
+            @include breakpoint($breakpoint-xxxl) {
+                width: 38px;
+                height: 38px;
+            }
+
+            @include breakpoint($breakpoint-xl) {
+                width: 32px;
+                height: 32px;
+            }
+
+        }
+
+        .header__contacts-item .contacts__link,
+        .header__contacts-item .contacts__working-mode {
+            @include breakpoint($breakpoint-xl) {
+                font-size: 14px;
+            }
+        }
+        .header__contacts-item .contacts__description {
+            @include breakpoint($breakpoint-xl) {
+                font-size: 11px;
+            }
+        }
+    }
+
+    &__wrapper {
+        @extend %flex-align-center-sb;
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        position: relative;
+        z-index: 110;
+
+        @include breakpoint($breakpoint-xl) {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+    }
+
+    &__logo,
+    &__contacts,
+    &__contacts-item:not(:last-child) {
+        margin-right: 40px;
+
+        @include breakpoint($breakpoint-xxxl) {
+            margin-right: 34px;
+        }
+
+        @include breakpoint($breakpoint-xl) {
+            margin-right: 25px;
+        }
+    }
+
+    &__contacts {
+        align-self: stretch;
+        margin-left: auto;
+    }
+
+    &__contacts-item {
+        @extend %flex-column-sb;
+        height: 100%;
+    }
+
+    &__contacts,
+    &__social {
+        @include breakpoint($breakpoint-lg) {
+            display: none;
+        }
+    }
+}

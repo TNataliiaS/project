@@ -1,0 +1,59 @@
+.site-nav {
+    width: 100%;
+    height: calc(100vh - 62px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    text-transform: uppercase;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 2;
+
+    @extend %pointer-events-none-opacity;
+    transition: opacity .4s ease .15s;
+
+    &_show {
+        @extend %pointer-events-auto-opacity;
+    }
+
+    &__list {
+        @extend %flex-column;
+        justify-content: center;
+        height: 100%;
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: 7px;
+        }
+    }
+
+    &__link {
+        font-size: 30px;
+        font-weight: 600;
+
+        transition: color .15s linear;
+
+        &:hover,
+        &:focus-visible {
+            color: $accent-element;
+        }
+
+        &:active {
+            color: darken($accent-element, 8%);
+        }
+
+        @include breakpoint($breakpoint-md) {
+            font-size: 26px;
+        }
+
+        @include breakpoint($breakpoint-xs) {
+            font-size: 24px;
+        }
+    }
+}

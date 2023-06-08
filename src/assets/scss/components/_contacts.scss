@@ -1,0 +1,40 @@
+.contacts {
+    @extend %flex-align-center;
+
+    &__description {
+        font-size: 16px;
+
+        @include breakpoint($breakpoint-xxxl) {
+            font-size: 15px;
+        }
+        @include breakpoint($breakpoint-xxl) {
+            font-size: 14px;
+        }
+
+        @include breakpoint($breakpoint-xl) {
+            font-size: 12px;
+        }
+    }
+
+    &__working-mode,
+    &__link {
+        font-weight: 600;
+    }
+
+    &__link {
+        transition: color .15s linear;
+
+        &:hover,
+        &:focus-visible {
+            color: $accent-element;
+        }
+
+        &:active {
+            color: darken($accent-element, 8%);
+        }
+
+        &_mail {
+            letter-spacing: .03em;
+        }
+    }
+}

@@ -1,0 +1,31 @@
+.team {
+    &__content {
+        font-size: 30px;
+
+        @include breakpoint($breakpoint-xxxl) {
+            font-size: 26px;
+        }
+
+        @include breakpoint($breakpoint-xxl) {
+            font-size: 22px;
+        }
+
+        @include breakpoint($breakpoint-xl) {
+            font-size: 18px;
+        }
+
+        @include breakpoint($breakpoint-xl) {
+            font-size: 16px;
+        }
+    }
+
+    &__content-paragraph {
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 7px;
+        }
+    }
+}
