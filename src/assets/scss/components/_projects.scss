@@ -329,7 +329,7 @@
         gap: 20px;
 
         picture {
-            display: none;
+            // display: none;
             @extend %max-percent-width-height;
             overflow: hidden;
 
@@ -344,7 +344,7 @@
 
         @extend %position-center;
 
-        @media screen and (min-width: 1600px) {
+        @media screen and (min-width: 1920px) {
             max-width: 1545px;
             max-height: 800px;
             height: 100%;

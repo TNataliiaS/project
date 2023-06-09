@@ -7,7 +7,7 @@ for (let i = 0; i < elements.length; ++i) {
         biggestHeight = elements[i].offsetHeight;
     }
 }
-console.log(biggestHeight);
+// console.log(biggestHeight);
 
 for (let i = 0; i < elements.length; ++i) {
     // const oneEl = elements[i];

@@ -14,8 +14,12 @@ function toggleImages() {
 
             itemSelectedBtn.onclick = (() => {
                 const imgInitial = itemSelected.querySelector('img');
-                let imgtag = popup.querySelector('img');
-                let sourcetag = popup.querySelector('source');
+                // let imgtag = popup.querySelector('img');
+                let popupImages = itemSelected.querySelector('picture').cloneNode(true);
+                let imgtag = popupImages.querySelector('img');
+
+                let sourcetag = popupImages.querySelector('source');
+                // let sourcetag = popup.querySelector('source');
 
                 const sourceInitial = imgInitial.getAttribute('src');
                 const altInitial = imgInitial.getAttribute('alt');
@@ -27,14 +31,25 @@ function toggleImages() {
                 const newO = document.createElement('ul');
 
                 return function() {
+                    imgtag.classList.add('projects__popup-img');
+                    imgtag.classList.remove('projects__item-img');
+
+                    // let we = itemSelected.querySelector('picture').cloneNode(true);
+                    // projectWrapper.prepend(we);
+                    projectWrapper.prepend(popupImages);
+
                     popup.classList.toggle('popup_active');
                     document.querySelector('.header__wrapper').style.marginRight = getScrollbarWidth();
                     document.documentElement.style.marginRight = getScrollbarWidth();
                     document.documentElement.style.overflow = 'hidden';
 
-                    projectWrapper.insertAdjacentElement('beforeend', newO);
+                    projectWrapper.append(newO);
                     newO.replaceWith(itemSelectedList);
                     itemSelectedList.classList.add('projects__popup-list');
+
+                    // projectWrapper.insertAdjacentElement('beforeend', newO);
+                    // newO.replaceWith(itemSelectedList);
+                    // itemSelectedList.classList.add('projects__popup-list');
 
                     let noJpg = sourceJpg.slice(0,-6);
                     let noWebp = sourceWebp.slice(0,-7);
@@ -48,28 +63,12 @@ function toggleImages() {
 
                     imgtag.alt = altInitial;
 
-                    document.querySelector('.projects__popup-wrapper picture').style.display = 'block';
-                    // document.querySelector('.projects__popup-img-wrapper img').style.cssText = `
-                    //     display: block;
-                    //     opacity: 0;
-                    // `;
-                    // console.log(document.querySelector('.projects__popup-wrapper picture').offsetHeight);
-                    // console.log(document.querySelector('.projects__popup-wrapper .img').offsetHeight);
-                    // document.querySelector('.projects__popup-img-wrapper img').style.opacity = '1';
+                    let pictureHeight = document.querySelector('.projects__popup-wrapper picture');
+                    let newNum = imgtag.offsetHeight + 'px';
+                    pictureHeight.style.height = newNum;
 
-                    // console.log(imgtag.offsetHeight);
-                    // console.log(sourcetag.offsetHeight);
 
-                    // const one = imgtag.offsetHeight;
-                    // const two = sourcetag.offsetHeight;
-
-                    // document.querySelector('.projects__popup-wrapper picture img').style.height = `${one}px`;
-                    // document.querySelector('.projects__popup-wrapper picture source').style.height = `${two}px`;
-
-                    // const one = document.querySelector('.projects__popup-img').offsetHeight;
-                    // console.log(one);
-                    // document.querySelector('.projects__popup-wrapper picture').style.height = `${one}px`;
-                    // console.log()
+                    // document.querySelector('.projects__popup-wrapper picture').style.display = 'block';
                 }
             })(projectsItem[j]);
         }
@@ -115,10 +114,10 @@ function toggleImages() {
 toggleImages();
 
 const hideImagesPopup = () => {
+    document.querySelector('.projects__popup-wrapper picture').remove();
+    document.querySelector('.projects__popup-wrapper ul').remove();
     popup.classList.remove('popup_active');
-
-    // console.log(document.querySelector('.projects__popup-wrapper img').offsetHeight);
-    document.querySelector('.projects__popup-wrapper picture').style.display = 'none';
+    // document.querySelector('.projects__popup-wrapper picture').style.display = 'none';
 
     setTimeout(() => {
         document.querySelector('.header__wrapper').style.marginRight = '0';
