@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
   };
   function toggleImages() {
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      document.querySelector('.projects__popup-wrapper picture').remove();
       var _loop = function _loop() {
         var itemSelected = projectsItem[j];
         var itemSelectedBtn = itemSelected.querySelector('.projects__item-more');
@@ -147,8 +148,10 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   toggleImages();
   var hideImagesPopup = function hideImagesPopup() {
-    document.querySelector('.projects__popup-wrapper picture').remove();
-    document.querySelector('.projects__popup-wrapper ul').remove();
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      document.querySelector('.projects__popup-wrapper picture').remove();
+      document.querySelector('.projects__popup-wrapper ul').remove();
+    }
     popup.classList.remove('popup_active');
     // document.querySelector('.projects__popup-wrapper picture').style.display = 'none';
 
@@ -176,18 +179,19 @@ document.addEventListener('DOMContentLoaded', function () {
       hideImagesPopup();
     }
   });
-  var biggestHeight = 0;
-  var elements = document.querySelectorAll('.areas-activity__item');
-  for (var _i2 = 0; _i2 < elements.length; ++_i2) {
-    // const oneEl = elements[i];
-    if (biggestHeight < elements[_i2].offsetHeight) {
-      biggestHeight = elements[_i2].offsetHeight;
-    }
-  }
-  // console.log(biggestHeight);
+  // let biggestHeight = 0;
+  // const elements = document.querySelectorAll('.areas-activity__item');
 
-  for (var _i3 = 0; _i3 < elements.length; ++_i3) {
-    // const oneEl = elements[i];
-    elements[_i3].style.height = biggestHeight + 'px';
-  }
+  // for (let i = 0; i < elements.length; ++i) {
+  //     // const oneEl = elements[i];
+  //     if (biggestHeight < elements[i].offsetHeight) {
+  //         biggestHeight = elements[i].offsetHeight;
+  //     }
+  // }
+  // // console.log(biggestHeight);
+
+  // for (let i = 0; i < elements.length; ++i) {
+  //     // const oneEl = elements[i];
+  //     elements[i].style.height = biggestHeight + 'px';
+  // }
 });
