@@ -119,10 +119,11 @@ const hideImagesPopup = () => {
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
         document.querySelector('.projects__popup-wrapper picture').remove();
         document.querySelector('.projects__popup-wrapper ul').remove();
+    } else {
+        document.querySelector('.projects__popup-wrapper picture').style.display = 'none';
     }
 
     popup.classList.remove('popup_active');
-    document.querySelector('.projects__popup-wrapper picture').style.display = 'none';
 
     setTimeout(() => {
         document.querySelector('.header__wrapper').style.marginRight = '0';
