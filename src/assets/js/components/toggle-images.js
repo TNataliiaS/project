@@ -70,7 +70,7 @@ function toggleImages() {
                     pictureHeight.style.height = newNum;
 
 
-                    document.querySelector('.projects__popup-wrapper picture').style.display = 'block';
+                    // document.querySelector('.projects__popup-wrapper picture').style.display = 'block';
                 }
             })(projectsItem[j]);
         }

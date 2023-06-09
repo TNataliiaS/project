@@ -109,7 +109,8 @@ document.addEventListener('DOMContentLoaded', function () {
             var pictureHeight = document.querySelector('.projects__popup-wrapper picture');
             var newNum = imgtag.offsetHeight + 'px';
             pictureHeight.style.height = newNum;
-            document.querySelector('.projects__popup-wrapper picture').style.display = 'block';
+
+            // document.querySelector('.projects__popup-wrapper picture').style.display = 'block';
           };
         }(projectsItem[j]);
       };
