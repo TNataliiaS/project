@@ -892,6 +892,7 @@ button {
 }
 
 .projects__popup-wrapper picture {
+  display: none;
   overflow: hidden;
   position: relative;
 }

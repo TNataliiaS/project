@@ -70,7 +70,7 @@ function toggleImages() {
                     pictureHeight.style.height = newNum;
 
 
-                    // document.querySelector('.projects__popup-wrapper picture').style.display = 'block';
+                    document.querySelector('.projects__popup-wrapper picture').style.display = 'block';
                 }
             })(projectsItem[j]);
         }
@@ -106,7 +106,7 @@ function toggleImages() {
 
                     imgtag.alt = altInitial;
 
-                    // document.querySelector('.projects__popup-wrapper picture').style.display = 'block';
+                    document.querySelector('.projects__popup-wrapper picture').style.display = 'block';
                 }
             })(projectsItem[i]);
         }
@@ -122,7 +122,7 @@ const hideImagesPopup = () => {
     }
 
     popup.classList.remove('popup_active');
-    // document.querySelector('.projects__popup-wrapper picture').style.display = 'none';
+    document.querySelector('.projects__popup-wrapper picture').style.display = 'none';
 
     setTimeout(() => {
         document.querySelector('.header__wrapper').style.marginRight = '0';
