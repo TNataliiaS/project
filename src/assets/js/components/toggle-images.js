@@ -106,7 +106,7 @@ function toggleImages() {
 
                     imgtag.alt = altInitial;
 
-                    document.querySelector('.projects__popup-wrapper picture').style.display = 'block';
+                    // document.querySelector('.projects__popup-wrapper picture').style.display = 'block';
                 }
             })(projectsItem[i]);
         }

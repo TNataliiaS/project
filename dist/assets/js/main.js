@@ -140,7 +140,8 @@ document.addEventListener('DOMContentLoaded', function () {
             imgtag.src = largesourceJpg;
             sourcetag.srcset = largesourceWebp;
             imgtag.alt = altInitial;
-            document.querySelector('.projects__popup-wrapper picture').style.display = 'block';
+
+            // document.querySelector('.projects__popup-wrapper picture').style.display = 'block';
           };
         }(projectsItem[_i]);
       }
