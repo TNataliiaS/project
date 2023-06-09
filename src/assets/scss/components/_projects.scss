@@ -96,7 +96,7 @@
             grid-column: 1 / span 7;
         }
 
-        @include breakpoint($breakpoint-sm) {
+        @include breakpoint($breakpoint-sm){
             &_xs-left,
             &_xs-right,
             &_xl-right,

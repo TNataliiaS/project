@@ -8,6 +8,8 @@ const getScrollbarWidth = () => {
 
 function toggleImages() {
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        document.querySelector('.projects__popup-wrapper picture').remove();
+
         for(let j = 0; j < projectsItem.length; j++) {
             const itemSelected = projectsItem[j];
             const itemSelectedBtn = itemSelected.querySelector('.projects__item-more');
@@ -114,8 +116,11 @@ function toggleImages() {
 toggleImages();
 
 const hideImagesPopup = () => {
-    document.querySelector('.projects__popup-wrapper picture').remove();
-    document.querySelector('.projects__popup-wrapper ul').remove();
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+        document.querySelector('.projects__popup-wrapper picture').remove();
+        document.querySelector('.projects__popup-wrapper ul').remove();
+    }
+
     popup.classList.remove('popup_active');
     // document.querySelector('.projects__popup-wrapper picture').style.display = 'none';
 
