@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
   var getDimensionsIntro = function getDimensionsIntro() {
-    var headerHeight = header.offsetHeight;
-    var heightDifference = firstElHeight - headerHeight;
+    // const headerHeight = header.offsetHeight;
+    // const heightDifference = firstElHeight - headerHeight;
     console.log(headerHeight);
     console.log(heightDifference);
     firstEl.style.paddingTop = headerHeight + 'px';
@@ -33,20 +33,26 @@ document.addEventListener('DOMContentLoaded', function () {
   var siteNavShow = document.getElementById('site-nav');
   var toggleByLink = document.querySelectorAll('.site-nav__link');
   var headerWrapper = document.getElementById('header__wrapper');
+  var showScrollBar = function showScrollBar() {
+    setTimeout(function () {
+      headerWrapper.style.marginRight = '0';
+      document.documentElement.style.marginRight = '0';
+      document.documentElement.style.overflow = 'auto';
+    }, 300);
+  };
+  var hideScrollBar = function hideScrollBar() {
+    headerWrapper.style.marginRight = getScrollbarWidth();
+    document.documentElement.style.marginRight = getScrollbarWidth();
+    document.documentElement.style.overflow = 'hidden';
+  };
   burgerToggle.addEventListener('click', function () {
     burgerToggle.classList.toggle('burger_active');
     header.classList.toggle('header_show');
     siteNavShow.classList.toggle('site-nav_show');
     if (burgerToggle.classList.contains('burger_active')) {
-      headerWrapper.style.marginRight = getScrollbarWidth();
-      document.documentElement.style.marginRight = getScrollbarWidth();
-      document.documentElement.style.overflow = 'hidden';
+      hideScrollBar();
     } else {
-      setTimeout(function () {
-        headerWrapper.style.marginRight = '0';
-        document.documentElement.style.marginRight = '0';
-        document.documentElement.style.overflow = 'auto';
-      }, 300);
+      showScrollBar();
     }
   });
   toggleByLink.forEach(function (e) {
@@ -54,11 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
       burgerToggle.classList.remove('burger_active');
       header.classList.remove('header_show');
       siteNavShow.classList.remove('site-nav_show');
-      setTimeout(function () {
-        headerWrapper.style.marginRight = '0';
-        document.documentElement.style.marginRight = '0';
-        document.documentElement.style.overflow = 'auto';
-      }, 300);
+      showScrollBar();
     });
   });
   // Smooth scoll element
@@ -92,12 +94,9 @@ document.addEventListener('DOMContentLoaded', function () {
         var itemSelectedBtn = itemSelected.querySelector('.projects__item-more');
         itemSelectedBtn.onclick = function () {
           var imgInitial = itemSelected.querySelector('img');
-          // let imgtag = popup.querySelector('img');
           var popupImages = itemSelected.querySelector('picture').cloneNode(true);
           var imgtag = popupImages.querySelector('img');
           var sourcetag = popupImages.querySelector('source');
-          // let sourcetag = popup.querySelector('source');
-
           var sourceInitial = imgInitial.getAttribute('src');
           var altInitial = imgInitial.getAttribute('alt');
           var sourceJpg = imgtag.getAttribute('src');
@@ -108,22 +107,12 @@ document.addEventListener('DOMContentLoaded', function () {
           return function () {
             imgtag.classList.add('projects__popup-img');
             imgtag.classList.remove('projects__item-img');
-
-            // let we = itemSelected.querySelector('picture').cloneNode(true);
-            // projectWrapper.prepend(we);
             projectWrapper.prepend(popupImages);
             popup.classList.toggle('popup_active');
-            document.querySelector('.header__wrapper').style.marginRight = getScrollbarWidth();
-            document.documentElement.style.marginRight = getScrollbarWidth();
-            document.documentElement.style.overflow = 'hidden';
+            hideScrollBar();
             projectWrapper.append(newO);
             newO.replaceWith(itemSelectedList);
             itemSelectedList.classList.add('projects__popup-list');
-
-            // projectWrapper.insertAdjacentElement('beforeend', newO);
-            // newO.replaceWith(itemSelectedList);
-            // itemSelectedList.classList.add('projects__popup-list');
-
             var noJpg = sourceJpg.slice(0, -6);
             var noWebp = sourceWebp.slice(0, -7);
             var num = sourceInitial.slice(-6, -4);
@@ -135,8 +124,6 @@ document.addEventListener('DOMContentLoaded', function () {
             var pictureHeight = document.querySelector('.projects__popup-wrapper picture');
             var newNum = imgtag.offsetHeight + 'px';
             pictureHeight.style.height = newNum;
-
-            // document.querySelector('.projects__popup-wrapper picture').style.display = 'block';
           };
         }(projectsItem[j]);
       };
@@ -155,9 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
           var sourceWebp = sourcetag.getAttribute('srcset');
           return function () {
             popup.classList.toggle('popup_active');
-            document.querySelector('.header__wrapper').style.marginRight = getScrollbarWidth();
-            document.documentElement.style.marginRight = getScrollbarWidth();
-            document.documentElement.style.overflow = 'hidden';
+            hideScrollBar();
             var noJpg = sourceJpg.slice(0, -6);
             var noWebp = sourceWebp.slice(0, -7);
             var num = sourceInitial.slice(-6, -4);
@@ -181,11 +166,7 @@ document.addEventListener('DOMContentLoaded', function () {
       document.querySelector('.projects__popup-wrapper picture').style.display = 'none';
     }
     popup.classList.remove('popup_active');
-    setTimeout(function () {
-      document.querySelector('.header__wrapper').style.marginRight = '0';
-      document.documentElement.style.marginRight = '0';
-      document.documentElement.style.overflow = 'auto';
-    }, 300);
+    showScrollBar();
     if (document.querySelector('.projects__popup-list') !== null) {
       document.querySelector('.projects__popup-list').remove();
     }
