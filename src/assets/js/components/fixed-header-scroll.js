@@ -2,13 +2,33 @@
 // ****************
 const firstEl = document.getElementById('intro');
 const header = document.getElementById('header');
-const headerHeight = header.offsetHeight;
+const introWrapper = document.getElementById('intro__wrapper');
+
+var headerHeight = header.offsetHeight;
 const firstElHeight = firstEl.offsetHeight;
+var heightDifference = firstElHeight - headerHeight;
 
 window.addEventListener('scroll', () => {
-    if (window.scrollY >= firstElHeight - headerHeight) {
+    if (window.scrollY >= heightDifference) {
         header.classList.add('header_fixed');
     } else {
         header.classList.remove('header_fixed');
     }
 });
+
+
+const getDimensionsIntro = () => {
+    const headerHeight = header.offsetHeight;
+    const heightDifference = firstElHeight - headerHeight;
+    console.log(headerHeight);
+    console.log(heightDifference);
+
+    firstEl.style.paddingTop = headerHeight + 'px';
+    introWrapper.style.height = heightDifference  + 'px';
+};
+
+getDimensionsIntro();
+
+window.addEventListener('resize', getDimensionsIntro);
+
+

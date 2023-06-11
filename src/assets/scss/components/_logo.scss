@@ -23,8 +23,12 @@
             height: 38px;
         }
 
+        @include breakpoint($breakpoint-xxl) {
+            height: 34px;
+        }
+
         @include breakpoint($breakpoint-xl) {
-            height: 32px;
+            height: 30px;
         }
     }
 }

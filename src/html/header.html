@@ -1,25 +1,26 @@
 <!-- Header -->
 <header class="header" id="header">
     <div class="container">
-        <div class="header__wrapper">
+        <div class="header__wrapper" id="header__wrapper">
             <a class="header__logo logo" href="index.html">
                 <img class="logo__img img" src="./assets/images/logo.svg" alt="Логотип ПКБ Инструмент">
             </a>
 
+            <nav class="header__site-nav site-nav" id="site-nav">
+                @@link-about-company
+                @@link-areas-activity
+                <a class="header__site-nav-link site-nav__link site-nav__link_hidden smooth-scroll-link" href="#contacts">Контакты</a>
+            </nav>
+
             <ul class="header__contacts contacts">
                 <li class="header__contacts-item contacts__item">
-                    <span class="contacts__description">г. Ижевск</span>
-                    <p class="contacts__working-mode">Пн – Пт: 10.00 – 18.00</p>
-                </li>
-
-                <li class="header__contacts-item contacts__item">
-                    <span class="contacts__description">Позвонить</span>
                     <a class="contacts__link" href="tel:+79043156114">+7 (904) 315-61-14</a>
+                    <a class="contacts__link" href="tel:+79821176107">+7 (982) 117-61-07</a>
                 </li>
 
                 <li class="header__contacts-item contacts__item">
-                    <span class="contacts__description">Написать</span>
-                    <a class="contacts__link contacts__link_mail" href="mailto:kb@pkbtool.ru">kb@pkbtool.ru</a>
+                    <a class="contacts__link contacts__link_mail" href="mailto:pkbtool@gmail.com">pkbtool@gmail.com</a>
+                    <a class="contacts__link contacts__link_mail" href="mailto:a.a.kornilov@pkbtool.ru">a.a.kornilov@pkbtool.ru</a>
                 </li>
             </ul>
 
@@ -52,17 +53,6 @@
                 <span class="burger__line">Меню</span>
                 <span class="burger__line">Меню</span>
             </button>
-
-            <nav class="site-nav container" id="site-nav">
-                <ul class="site-nav__list">
-                    <li class="site-nav__item">
-                        @@link
-                    </li>
-                    <li>
-                        <a class="site-nav__link smooth-scroll-link" href="#contacts">Контакты</a>
-                    </li>
-                </ul>
-            </nav>
         </div><!-- /.container -->
     </div><!-- /.header__wrapper-->
 </header>

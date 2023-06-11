@@ -1,40 +1,41 @@
 .site-nav {
-    width: 100%;
-    height: calc(100vh - 62px);
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding-top: 10px;
-    padding-bottom: 10px;
-
-    text-transform: uppercase;
-
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    z-index: 2;
-
-    @extend %pointer-events-none-opacity;
     transition: opacity .4s ease .15s;
 
-    &_show {
-        @extend %pointer-events-auto-opacity;
-    }
-
-    &__list {
-        @extend %flex-column;
+    @include breakpoint($breakpoint-lg) {
+        width: 100%;
+        margin-right: 0;
+        padding: 10px 0;
+        height: calc(100vh - 60px);
+        display: flex;
+        flex-direction: column;
         justify-content: center;
-        height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        text-transform: uppercase;
+        opacity: 0;
+        pointer-events: none;
+
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 2;
+
+        .site-nav__link_hidden {
+            display: block;
+        }
     }
 
-    &__item {
-        &:not(:last-child) {
-            margin-bottom: 7px;
+    &_show {
+        @include breakpoint($breakpoint-lg) {
+            opacity: 1;
+            pointer-events: auto;
         }
     }
 
     &__link {
-        font-size: 30px;
+        font-size: 22px;
         font-weight: 600;
 
         transition: color .15s linear;
@@ -48,12 +49,36 @@
             color: darken($accent-element, 8%);
         }
 
-        @include breakpoint($breakpoint-md) {
-            font-size: 26px;
+        &_hidden {
+            display: none;
+        }
+
+        @include breakpoint($breakpoint-xxxl) {
+            font-size: 20px;
+        }
+
+        @include breakpoint($breakpoint-xxl) {
+            font-size: 18px;
+        }
+
+        @include breakpoint($breakpoint-xl) {
+            font-size: 16px;
+        }
+
+        @include breakpoint($breakpoint-lg) {
+            font-size: 24px;
+
+            &:not(:last-child) {
+                margin-bottom: 5px;
+            }
         }
 
         @include breakpoint($breakpoint-xs) {
-            font-size: 24px;
+            font-size: 20px;
+
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
         }
     }
 }

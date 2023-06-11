@@ -1,6 +1,6 @@
 .burger {
     display: none;
-    width: 37px;
+    width: 34px;
     padding: 5px 0 5px 5px;
 
     background: none;
@@ -19,11 +19,11 @@
             background-color: $accent-element;
 
             &:nth-child(1) {
-                transform: translateY(10px);
+                transform: translateY(9px);
             }
 
             &:nth-child(3) {
-                transform: translateY(-10px);
+                transform: translateY(-9px);
             }
         }
     }
@@ -38,7 +38,7 @@
         transition: background-color .4s ease-out, transform .4s ease-out;
 
         &:nth-child(2) {
-            margin: 8px 0;
+            margin: 7px 0;
         }
     }
 }

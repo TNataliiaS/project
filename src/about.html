@@ -6,7 +6,8 @@
 <body>
     <div class="page">
         @@include("html/header.html", {
-            "link": '<a class="site-nav__link" href="./index.html">Главная</a>'
+            "link-about-company": '<a class="header__site-nav-link site-nav__link" href="./index.html">Главная</a>',
+            "link-areas-activity": '<a class="header__site-nav-link site-nav__link smooth-scroll-link" href="#areas-activity">Услуги</a>'
          })
 
         <!-- Main -->
@@ -47,9 +48,9 @@
             </div>
 
 
-            <div class="section section_last">
+            <div class="section section_last" id="areas-activity">
                 <div class="areas-activity container">
-                    <h2 class="section__title">Направления деятельности</h2>
+                    <h2 class="section__title">Услуги</h2>
 
                     <ul class="areas-activity__list">
                         <li class="areas-activity__item">
@@ -65,19 +66,19 @@
                             <h3>Разработка конструкторской и технологической документации по ТЗ</h3>
                         </li>
                         <li class="areas-activity__item">
-                            <h3>Создание 3d моделей</h3>
+                            <h3>Создание 3D-моделей</h3>
                         </li>
                         <li class="areas-activity__item">
-                            <h3>Разработка специальной оснастки в том числе станчной</h3>
+                            <h3>Разработка специальной оснастки, в том числе станочной</h3>
                         </li>
                         <li class="areas-activity__item">
-                            <h3>Поставка и изготовление нестандартного металлорежущего оборудования</h3>
+                            <h3>Поставка и изготовление нестандартного металлорежущего оборудования, инструмента и комплектующих</h3>
                         </li>
                         <li class="areas-activity__item">
-                            <h3>Подготовка технической докментации для экспертизы в ТПП и МинПромТорг технологического обрудования</h3>
+                            <h3>Подготовка технической документации для экспертизы в ТПП и МинПромТорг</h3>
                         </li>
                         <li class="areas-activity__item">
-                            <h3>НИР, ОКР. Организация производства</h3>
+                            <h3>НИР, ОКР, организация производства</h3>
                         </li>
                     </ul>
                 </div>

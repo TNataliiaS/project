@@ -5,34 +5,60 @@ document.addEventListener('DOMContentLoaded', function () {
   // ****************
   var firstEl = document.getElementById('intro');
   var header = document.getElementById('header');
+  var introWrapper = document.getElementById('intro__wrapper');
   var headerHeight = header.offsetHeight;
   var firstElHeight = firstEl.offsetHeight;
+  var heightDifference = firstElHeight - headerHeight;
   window.addEventListener('scroll', function () {
-    if (window.scrollY >= firstElHeight - headerHeight) {
+    if (window.scrollY >= heightDifference) {
       header.classList.add('header_fixed');
     } else {
       header.classList.remove('header_fixed');
     }
   });
+  var getDimensionsIntro = function getDimensionsIntro() {
+    var headerHeight = header.offsetHeight;
+    var heightDifference = firstElHeight - headerHeight;
+    console.log(headerHeight);
+    console.log(heightDifference);
+    firstEl.style.paddingTop = headerHeight + 'px';
+    introWrapper.style.height = heightDifference + 'px';
+  };
+  getDimensionsIntro();
+  window.addEventListener('resize', getDimensionsIntro);
+
   // Menu Toggle
   // ****************
   var burgerToggle = document.getElementById('burger');
-  var headerShow = document.getElementById('header');
   var siteNavShow = document.getElementById('site-nav');
   var toggleByLink = document.querySelectorAll('.site-nav__link');
-  var bodyDisableScroll = document.querySelector('body');
+  var headerWrapper = document.getElementById('header__wrapper');
   burgerToggle.addEventListener('click', function () {
     burgerToggle.classList.toggle('burger_active');
-    headerShow.classList.toggle('header_show');
+    header.classList.toggle('header_show');
     siteNavShow.classList.toggle('site-nav_show');
-    bodyDisableScroll.classList.toggle('no-scroll');
+    if (burgerToggle.classList.contains('burger_active')) {
+      headerWrapper.style.marginRight = getScrollbarWidth();
+      document.documentElement.style.marginRight = getScrollbarWidth();
+      document.documentElement.style.overflow = 'hidden';
+    } else {
+      setTimeout(function () {
+        headerWrapper.style.marginRight = '0';
+        document.documentElement.style.marginRight = '0';
+        document.documentElement.style.overflow = 'auto';
+      }, 300);
+    }
   });
   toggleByLink.forEach(function (e) {
     return e.addEventListener('click', function () {
       burgerToggle.classList.remove('burger_active');
-      headerShow.classList.remove('header_show');
+      header.classList.remove('header_show');
       siteNavShow.classList.remove('site-nav_show');
-      bodyDisableScroll.classList.remove('no-scroll');
+      setTimeout(function () {
+        headerWrapper.style.marginRight = '0';
+        document.documentElement.style.marginRight = '0';
+        document.documentElement.style.overflow = 'auto';
+      }, 300);
     });
   });
   // Smooth scoll element
@@ -43,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
       event.preventDefault();
       var href = this.getAttribute('href').substring(1);
       var scrollTarget = document.getElementById(href);
-      var topOffset = document.getElementById('header').offsetHeight;
+      var topOffset = headerHeight;
       var elementPosition = scrollTarget.getBoundingClientRect().top;
       var offsetPosition = elementPosition - topOffset;
       window.scrollBy({
@@ -179,19 +205,4 @@ document.addEventListener('DOMContentLoaded', function () {
       hideImagesPopup();
     }
   });
-  // let biggestHeight = 0;
-  // const elements = document.querySelectorAll('.areas-activity__item');
-
-  // for (let i = 0; i < elements.length; ++i) {
-  //     // const oneEl = elements[i];
-  //     if (biggestHeight < elements[i].offsetHeight) {
-  //         biggestHeight = elements[i].offsetHeight;
-  //     }
-  // }
-  // // console.log(biggestHeight);
-
-  // for (let i = 0; i < elements.length; ++i) {
-  //     // const oneEl = elements[i];
-  //     elements[i].style.height = biggestHeight + 'px';
-  // }
 });

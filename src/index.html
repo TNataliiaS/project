@@ -6,24 +6,17 @@
 <body>
     <div class="page">
         @@include("html/header.html", {
-           "link": '<a class="site-nav__link" href="./about.html">О компании</a>'
+           "link-about-company": '<a class="header__site-nav-link site-nav__link" href="./about.html">О компании</a>',
+           "link-areas-activity": '<a class="header__site-nav-link site-nav__link smooth-scroll-link" href="./about.html#areas-activity">Услуги</a>'
         })
 
         <!-- Main -->
         <main>
-            <h1 class="visually-hidden">Конструкторско-технологическое<br>сопровождение<br>машиностроительных<br> производств</h1>
-
             <!-- Intro -->
             <div class="intro container" id="intro">
-                <div class="intro__wrapper">
-                   <ul>
-                       <li class="intro__list-item">Разработка КД</li>
-                       <li class="intro__list-item">Реверс-инжиниринг</li>
-                       <li class="intro__list-item">Сопровождение производства</li>
-                       <li class="intro__list-item">Проектирование любой&nbsp;сложности</li>
-                   </ul>
-
-                   <a href="#projects" class="intro__arrow-down smooth-scroll-link">Прокрутить вниз</a>
+                <div class="intro__wrapper" id="intro__wrapper">
+                    <h1 class="intro__title">Решение задач машиностроения</h1>
+                    <a href="#projects" class="intro__arrow-down smooth-scroll-link">Прокрутить вниз</a>
                </div><!-- /.intro__wrapper -->
             </div><!-- /.intro .container -->
 
@@ -40,14 +33,14 @@
                                 <img class="projects__item-img img" src="./assets/images/projects/project-01.jpg" alt="Специальный мобильный станок">
                             </picture>
                             <div class="projects__item-content">
-                                <h2 class="projects__item-title">Реверс&#8209;инжиниринг специльного мобильного станка</h2>
+                                <h2 class="projects__item-title">Реверс&#8209;инжиниринг специального мобильного станка</h2>
                                 <div class="projects__item-footer">
                                     <button class="projects__item-more" type="button">Подробнее</button>
 
                                     <ul class="projects__item-list">
                                         <li class="projects__item-description">Анализ существующей конструкции, поиск &laquo;слабых&raquo; мест</li>
                                         <li class="projects__item-description">Подбор покупных комплектующих российского производства</li>
-                                        <li class="projects__item-description">Разработка 3Д-модели с адаптацией под задачи и условия Заказчика</li>
+                                        <li class="projects__item-description">Разработка 3D&#8209;модели с адаптацией под задачи и условия Заказчика</li>
                                         <li class="projects__item-description">Разработка комплекта конструкторской документации</li>
                                     </ul>
                                     <div class="projects__item-realization">
@@ -72,7 +65,7 @@
 
                                     <ul class="projects__item-list">
                                         <li class="projects__item-description">Разборка и дефектовка изделий, анализ конструкции, анализ материалов</li>
-                                        <li class="projects__item-description">Разработка 3Д-моделей</li>
+                                        <li class="projects__item-description">Разработка 3D&#8209;моделей</li>
                                         <li class="projects__item-description">Расчёт нагруженных деталей, ресурса работы, размерный анализ</li>
                                         <li class="projects__item-description">Разработка комплекта конструкторской документации</li>
                                     </ul>
@@ -101,7 +94,7 @@
                                         <li class="projects__item-description">ОКР по проектированию механической и электрической частей станка</li>
                                         <li class="projects__item-description">Подбор комплектующих</li>
                                         <li class="projects__item-description">Изготовление нестандартных комплектующих</li>
-                                        <li class="projects__item-description">Сборка оборудования, пуско-наладочные работы, приемо-сдаточные испытания</li>
+                                        <li class="projects__item-description">Сборка оборудования, пуско&#8209;наладочные работы, приемо&#8209;сдаточные испытания</li>
                                     </ul>
                                     <div class="projects__item-realization">
                                         <svg class="projects__item-icon">
@@ -151,8 +144,8 @@
 
                                     <ul class="projects__item-list">
                                         <li class="projects__item-description">Разработка и согласование концепции базирования и закрепления заготовок</li>
-                                        <li class="projects__item-description">Разработка 3Д-моделей оснастки и автоматических шторок</li>
-                                        <li class="projects__item-description">Согласование, внесение корректировок в 3Д-модель</li>
+                                        <li class="projects__item-description">Разработка 3D&#8209;моделей оснастки и автоматических шторок</li>
+                                        <li class="projects__item-description">Согласование, внесение корректировок в 3D&#8209;модель</li>
                                         <li class="projects__item-description">Разработка комплекта конструкторской документации</li>
                                         <li class="projects__item-description">Сопровождение изготовления, запуска и наладки</li>
                                     </ul>
@@ -203,8 +196,8 @@
 
                                     <ul class="projects__item-list">
                                         <li class="projects__item-description">Анализ исходных чертежей (более 60 шт), выполненных на кульманах в конце прошлого века</li>
-                                        <li class="projects__item-description">Разработка 3Д-моделей заготовок (штамповки, отливки)</li>
-                                        <li class="projects__item-description">Разработка 3Д-моделей обработанных деталей</li>
+                                        <li class="projects__item-description">Разработка 3D&#8209;моделей заготовок (штамповки, отливки)</li>
+                                        <li class="projects__item-description">Разработка 3D&#8209;моделей обработанных деталей</li>
                                         <li class="projects__item-description">Актуализация чертежей</li>
                                     </ul>
                                     <div class="projects__item-realization">
@@ -304,7 +297,7 @@
                                     <ul class="projects__item-list">
                                         <li class="projects__item-description">Анализ текущей конструкции, поиск недостатков</li>
                                         <li class="projects__item-description">Согласование с Заказчиком требуемых изменений</li>
-                                        <li class="projects__item-description">Разработка 3Д-модели</li>
+                                        <li class="projects__item-description">Разработка 3D&#8209;модели</li>
                                         <li class="projects__item-description">Разработка комплекта конструкторской документации</li>
                                         <li class="projects__item-description">Сопровождение изготовления, запуска и наладки</li>
                                     </ul>
@@ -331,7 +324,7 @@
                                     <ul class="projects__item-list">
                                         <li class="projects__item-description">Анализ технологии сворачивания изделий и ограничений</li>
                                         <li class="projects__item-description">Разработка концепции сворачивания изделий без внешнего управления</li>
-                                        <li class="projects__item-description">Разработка 3Д-модели автоматизированной оснастки</li>
+                                        <li class="projects__item-description">Разработка 3D&#8209;модели автоматизированной оснастки</li>
                                         <li class="projects__item-description">Разработка комплекта конструкторской документации</li>
                                     </ul>
                                     <div class="projects__item-realization">
@@ -357,7 +350,7 @@
                                     <ul class="projects__item-list">
                                         <li class="projects__item-description">Анализ исходных данных (принципиальные гидравлические схемы, планировка здания и т.д.)</li>
                                         <li class="projects__item-description">Разработка компоновочного решения, расположения узлов и агрегатов</li>
-                                        <li class="projects__item-description">Разработка 3Д-модели, согласование с другими системами, разводка трубопровода по зданию</li>
+                                        <li class="projects__item-description">Разработка 3D&#8209;модели, согласование с другими системами, разводка трубопровода по зданию</li>
                                         <li class="projects__item-description">Разработка комплекта конструкторской документации</li>
                                     </ul>
                                     <div class="projects__item-realization">
@@ -509,8 +502,8 @@
                                     <button class="projects__item-more" type="button">Подробнее</button>
 
                                     <ul class="projects__item-list">
-                                        <li class="projects__item-description">Разборка станка и 3D моделирование каждой детали</li>
-                                        <li class="projects__item-description">3D сборка станка</li>
+                                        <li class="projects__item-description">Разборка станка и 3D&#8209;моделирование каждой детали</li>
+                                        <li class="projects__item-description">3D&#8209;сборка станка</li>
                                         <li class="projects__item-description">Подбор покупных изделий</li>
                                         <li class="projects__item-description">Изменение деталей для улучшения технологичности и стыковки с новыми покупными изделиями</li>
                                         <li class="projects__item-description">Разработка КД</li>
@@ -539,7 +532,7 @@
 
                                     <ul class="projects__item-list">
                                         <li class="projects__item-description">Разборка и дефектовка изделий, анализ конструкции, анализ материалов фрикционов</li>
-                                        <li class="projects__item-description">Разработка 3Д-моделей</li>
+                                        <li class="projects__item-description">Разработка 3D&#8209;моделей</li>
                                         <li class="projects__item-description">Расчёт нагруженных деталей, ресурса работы, размерный анализ</li>
                                         <li class="projects__item-description">Разработка КД</li>
                                     </ul>
@@ -564,7 +557,7 @@
                                     <button class="projects__item-more" type="button">Подробнее</button>
 
                                     <ul class="projects__item-list">
-                                        <li class="projects__item-description">Создание 3D модели шпинделя</li>
+                                        <li class="projects__item-description">Создание 3D&#8209;модели шпинделя</li>
                                         <li class="projects__item-description">Анализ поверхностей для назначения допусков формы и расположения, определение степени точности, нагрузочной способности</li>
                                         <li class="projects__item-description">Разработка чертежа детали</li>
                                     </ul>
@@ -641,7 +634,7 @@
                                     <button class="projects__item-more" type="button">Подробнее</button>
 
                                     <ul class="projects__item-list">
-                                        <li class="projects__item-description">Создание 3D модели по предоставленному образцу</li>
+                                        <li class="projects__item-description">Создание 3D&#8209;модели по предоставленному образцу</li>
                                         <li class="projects__item-description">Анализ конструкции для назначения допусков формы и расположения, определение степени точности, нагрузочной способности</li>
                                         <li class="projects__item-description">Разработка чертежа, сопровождение заказа, согласование</li>
                                     </ul>

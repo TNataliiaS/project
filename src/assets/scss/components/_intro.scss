@@ -1,25 +1,7 @@
 .intro {
     height: 100vh;
-    padding-top: 88px;
     margin-bottom: 50px;
     overflow: hidden;
-
-    @include breakpoint($breakpoint-xxxl) {
-        padding-top: 82px;
-    }
-
-    @include breakpoint($breakpoint-xxl) {
-        padding-top: 80px;
-        margin-bottom: 40px;
-    }
-
-    @include breakpoint($breakpoint-xl) {
-        padding-top: 64px;
-    }
-
-    @include breakpoint($breakpoint-lg) {
-        padding-top: 62px;
-    }
 
     @media screen and (max-width: 992px) and (hover: none) and (pointer: coarse) {
         height: 100svh;
@@ -36,9 +18,10 @@
 
     &__wrapper {
         width: 100%;
-        height: calc(100vh - 88px);
-        padding-top: 7%;
-        padding-bottom: 15%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 8%;
 
         @include retina-bg('intro/intro-bg');
         background-position: center;
@@ -47,32 +30,32 @@
 
         position: relative;
 
-        @include breakpoint($breakpoint-xxxl) {
-            height: calc(100vh - 82px);
-        }
-
         @include breakpoint($breakpoint-xxl) {
-            height: calc(100vh - 80px);
+            padding-bottom: 6%;
         }
 
         @include breakpoint($breakpoint-xl) {
-            height: calc(100vh - 64px);
-
             text-align: center;
         }
 
         @include breakpoint($breakpoint-lg) {
-            height: calc(100vh - 62px);
+            padding-bottom: 8%;
         }
 
         @media screen and (max-width: 992px) and (hover: none) and (pointer: coarse) {
-            height: calc(100svh - 62px);
+            height: calc(100svh - 60px) !important;
+        }
+
+        @include breakpoint($breakpoint-md) {
+            padding-bottom: 10%;
         }
 
         @include breakpoint($breakpoint-sm) {
-            padding-top: 0;
-            display: flex;
-            align-items: center;
+            padding-bottom: 14%;
+        }
+
+        @include breakpoint($breakpoint-xs) {
+            padding-bottom: 20%;
         }
 
         @include breakpoint-height-orientation($breakpoint-sm) {
@@ -101,11 +84,14 @@
         }
     }
 
-    &__list-item {
-        font-size: 64px;
+    &__title {
+        max-width: 90%;
+
+        font-size: 76px;
         font-weight: 700;
         letter-spacing: .05em;
         text-transform: uppercase;
+        text-align: center;
 
         position: relative;
         z-index: 5;
@@ -126,45 +112,29 @@
             }
         }
 
-        &:not(:last-child) {
-            margin-bottom: 25px;
-        }
-
         @include breakpoint($breakpoint-xxxl) {
-            font-size: 56px;
-
-            &:not(:last-child) {
-                margin-bottom: 20px;
-            }
+            font-size: 68px;
         }
 
         @include breakpoint($breakpoint-xxl) {
-            font-size: 50px;
+            font-size: 58px;
         }
 
         @include breakpoint($breakpoint-xl) {
-            font-size: 42px;
-
-            &:not(:last-child) {
-                margin-bottom: 30px;
-            }
+            font-size: 48px;
         }
 
         @include breakpoint($breakpoint-md) {
-            font-size: 38px;
+            max-width: 100%;
+            font-size: 44px;
         }
 
         @include breakpoint($breakpoint-sm) {
-            font-size: 30px;
+            font-size: 34px;
         }
 
         @include breakpoint($breakpoint-xs) {
             font-size: 24px;
-            line-height: 1.4;
-
-            &:not(:last-child) {
-                margin-bottom: 25px;
-            }
         }
     }
 
