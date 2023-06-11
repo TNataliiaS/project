@@ -16,12 +16,10 @@ function toggleImages() {
 
             itemSelectedBtn.onclick = (() => {
                 const imgInitial = itemSelected.querySelector('img');
-                // let imgtag = popup.querySelector('img');
                 let popupImages = itemSelected.querySelector('picture').cloneNode(true);
-                let imgtag = popupImages.querySelector('img');
 
+                let imgtag = popupImages.querySelector('img');
                 let sourcetag = popupImages.querySelector('source');
-                // let sourcetag = popup.querySelector('source');
 
                 const sourceInitial = imgInitial.getAttribute('src');
                 const altInitial = imgInitial.getAttribute('alt');
@@ -36,22 +34,14 @@ function toggleImages() {
                     imgtag.classList.add('projects__popup-img');
                     imgtag.classList.remove('projects__item-img');
 
-                    // let we = itemSelected.querySelector('picture').cloneNode(true);
-                    // projectWrapper.prepend(we);
                     projectWrapper.prepend(popupImages);
 
                     popup.classList.toggle('popup_active');
-                    document.querySelector('.header__wrapper').style.marginRight = getScrollbarWidth();
-                    document.documentElement.style.marginRight = getScrollbarWidth();
-                    document.documentElement.style.overflow = 'hidden';
+                    hideScrollBar();
 
                     projectWrapper.append(newO);
                     newO.replaceWith(itemSelectedList);
                     itemSelectedList.classList.add('projects__popup-list');
-
-                    // projectWrapper.insertAdjacentElement('beforeend', newO);
-                    // newO.replaceWith(itemSelectedList);
-                    // itemSelectedList.classList.add('projects__popup-list');
 
                     let noJpg = sourceJpg.slice(0,-6);
                     let noWebp = sourceWebp.slice(0,-7);
@@ -68,9 +58,6 @@ function toggleImages() {
                     let pictureHeight = document.querySelector('.projects__popup-wrapper picture');
                     let newNum = imgtag.offsetHeight + 'px';
                     pictureHeight.style.height = newNum;
-
-
-                    // document.querySelector('.projects__popup-wrapper picture').style.display = 'block';
                 }
             })(projectsItem[j]);
         }
@@ -90,9 +77,7 @@ function toggleImages() {
 
                 return function() {
                     popup.classList.toggle('popup_active');
-                    document.querySelector('.header__wrapper').style.marginRight = getScrollbarWidth();
-                    document.documentElement.style.marginRight = getScrollbarWidth();
-                    document.documentElement.style.overflow = 'hidden';
+                    hideScrollBar();
 
                     let noJpg = sourceJpg.slice(0,-6);
                     let noWebp = sourceWebp.slice(0,-7);
@@ -124,12 +109,7 @@ const hideImagesPopup = () => {
     }
 
     popup.classList.remove('popup_active');
-
-    setTimeout(() => {
-        document.querySelector('.header__wrapper').style.marginRight = '0';
-        document.documentElement.style.marginRight = '0';
-	    document.documentElement.style.overflow = 'auto';
-    }, 300);
+    showScrollBar();
 
     if(document.querySelector('.projects__popup-list') !== null) {
         document.querySelector('.projects__popup-list').remove()

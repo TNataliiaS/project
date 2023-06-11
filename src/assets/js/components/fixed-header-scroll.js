@@ -4,9 +4,9 @@ const firstEl = document.getElementById('intro');
 const header = document.getElementById('header');
 const introWrapper = document.getElementById('intro__wrapper');
 
-var headerHeight = header.offsetHeight;
+const headerHeight = header.offsetHeight;
 const firstElHeight = firstEl.offsetHeight;
-var heightDifference = firstElHeight - headerHeight;
+const heightDifference = firstElHeight - headerHeight;
 
 window.addEventListener('scroll', () => {
     if (window.scrollY >= heightDifference) {
@@ -18,8 +18,8 @@ window.addEventListener('scroll', () => {
 
 
 const getDimensionsIntro = () => {
-    const headerHeight = header.offsetHeight;
-    const heightDifference = firstElHeight - headerHeight;
+    // const headerHeight = header.offsetHeight;
+    // const heightDifference = firstElHeight - headerHeight;
     console.log(headerHeight);
     console.log(heightDifference);
 
