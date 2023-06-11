@@ -18,8 +18,8 @@ window.addEventListener('scroll', () => {
 
 
 const getDimensionsIntro = () => {
-    // const headerHeight = header.offsetHeight;
-    // const heightDifference = firstElHeight - headerHeight;
+    const headerHeight = header.offsetHeight;
+    const heightDifference = firstElHeight - headerHeight;
     console.log(headerHeight);
     console.log(heightDifference);
 
