@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
   var getDimensionsIntro = function getDimensionsIntro() {
-    // const headerHeight = header.offsetHeight;
-    // const heightDifference = firstElHeight - headerHeight;
+    var headerHeight = header.offsetHeight;
+    var heightDifference = firstElHeight - headerHeight;
     console.log(headerHeight);
     console.log(heightDifference);
     firstEl.style.paddingTop = headerHeight + 'px';
@@ -27,12 +27,8 @@ document.addEventListener('DOMContentLoaded', function () {
   getDimensionsIntro();
   window.addEventListener('resize', getDimensionsIntro);
 
-  // Menu Toggle
+  // Hide and show scroll bar
   // ****************
-  var burgerToggle = document.getElementById('burger');
-  var siteNavShow = document.getElementById('site-nav');
-  var toggleByLink = document.querySelectorAll('.site-nav__link');
-  var headerWrapper = document.getElementById('header__wrapper');
   var showScrollBar = function showScrollBar() {
     setTimeout(function () {
       headerWrapper.style.marginRight = '0';
@@ -45,6 +41,12 @@ document.addEventListener('DOMContentLoaded', function () {
     document.documentElement.style.marginRight = getScrollbarWidth();
     document.documentElement.style.overflow = 'hidden';
   };
+  // Menu Toggle
+  // ****************
+  var burgerToggle = document.getElementById('burger');
+  var siteNavShow = document.getElementById('site-nav');
+  var toggleByLink = document.querySelectorAll('.site-nav__link');
+  var headerWrapper = document.getElementById('header__wrapper');
   burgerToggle.addEventListener('click', function () {
     burgerToggle.classList.toggle('burger_active');
     header.classList.toggle('header_show');
@@ -103,15 +105,15 @@ document.addEventListener('DOMContentLoaded', function () {
           var sourceWebp = sourcetag.getAttribute('srcset');
           var projectWrapper = document.querySelector('.projects__popup-wrapper');
           var itemSelectedList = itemSelected.querySelector('.projects__item-list');
-          var newO = document.createElement('ul');
+          var newList = document.createElement('ul');
           return function () {
             imgtag.classList.add('projects__popup-img');
             imgtag.classList.remove('projects__item-img');
             projectWrapper.prepend(popupImages);
             popup.classList.toggle('popup_active');
             hideScrollBar();
-            projectWrapper.append(newO);
-            newO.replaceWith(itemSelectedList);
+            projectWrapper.append(newList);
+            newList.replaceWith(itemSelectedList);
             itemSelectedList.classList.add('projects__popup-list');
             var noJpg = sourceJpg.slice(0, -6);
             var noWebp = sourceWebp.slice(0, -7);

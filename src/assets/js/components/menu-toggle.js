@@ -5,20 +5,6 @@ const siteNavShow = document.getElementById('site-nav');
 const toggleByLink = document.querySelectorAll('.site-nav__link');
 const headerWrapper = document.getElementById('header__wrapper');
 
-const showScrollBar = () => {
-    setTimeout(() => {
-            headerWrapper.style.marginRight = '0';
-            document.documentElement.style.marginRight = '0';
-            document.documentElement.style.overflow = 'auto';
-    }, 300);
-}
-
-const hideScrollBar = () => {
-    headerWrapper.style.marginRight = getScrollbarWidth();
-    document.documentElement.style.marginRight = getScrollbarWidth();
-    document.documentElement.style.overflow = 'hidden';
-}
-
 burgerToggle.addEventListener('click', () => {
     burgerToggle.classList.toggle('burger_active');
     header.classList.toggle('header_show');

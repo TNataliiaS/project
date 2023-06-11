@@ -16,19 +16,18 @@ function toggleImages() {
 
             itemSelectedBtn.onclick = (() => {
                 const imgInitial = itemSelected.querySelector('img');
-                let popupImages = itemSelected.querySelector('picture').cloneNode(true);
-
-                let imgtag = popupImages.querySelector('img');
-                let sourcetag = popupImages.querySelector('source');
+                const popupImages = itemSelected.querySelector('picture').cloneNode(true);
+                const imgtag = popupImages.querySelector('img');
+                const sourcetag = popupImages.querySelector('source');
 
                 const sourceInitial = imgInitial.getAttribute('src');
                 const altInitial = imgInitial.getAttribute('alt');
-                let sourceJpg = imgtag.getAttribute('src');
-                let sourceWebp = sourcetag.getAttribute('srcset');
+                const sourceJpg = imgtag.getAttribute('src');
+                const sourceWebp = sourcetag.getAttribute('srcset');
 
                 const projectWrapper = document.querySelector('.projects__popup-wrapper');
                 const itemSelectedList = itemSelected.querySelector('.projects__item-list');
-                const newO = document.createElement('ul');
+                const newList = document.createElement('ul');
 
                 return function() {
                     imgtag.classList.add('projects__popup-img');
@@ -39,24 +38,23 @@ function toggleImages() {
                     popup.classList.toggle('popup_active');
                     hideScrollBar();
 
-                    projectWrapper.append(newO);
-                    newO.replaceWith(itemSelectedList);
+                    projectWrapper.append(newList);
+                    newList.replaceWith(itemSelectedList);
                     itemSelectedList.classList.add('projects__popup-list');
 
-                    let noJpg = sourceJpg.slice(0,-6);
-                    let noWebp = sourceWebp.slice(0,-7);
-                    let num = sourceInitial.slice(-6, -4);
+                    const noJpg = sourceJpg.slice(0,-6);
+                    const noWebp = sourceWebp.slice(0,-7);
+                    const num = sourceInitial.slice(-6, -4);
 
-                    let largesourceJpg = noJpg + num + '-large.jpg';
-                    let largesourceWebp = noWebp + num + '-large.webp';
+                    const largesourceJpg = noJpg + num + '-large.jpg';
+                    const largesourceWebp = noWebp + num + '-large.webp';
 
                     imgtag.src = largesourceJpg;
                     sourcetag.srcset = largesourceWebp;
-
                     imgtag.alt = altInitial;
 
-                    let pictureHeight = document.querySelector('.projects__popup-wrapper picture');
-                    let newNum = imgtag.offsetHeight + 'px';
+                    const pictureHeight = document.querySelector('.projects__popup-wrapper picture');
+                    const newNum = imgtag.offsetHeight + 'px';
                     pictureHeight.style.height = newNum;
                 }
             })(projectsItem[j]);
@@ -67,28 +65,27 @@ function toggleImages() {
         for(let i = 0; i < projectsItem.length; i++) {
             projectsItem[i].onclick = ((image) => {
                 const imgInitial = image.querySelector('img');
-                let imgtag = popup.querySelector('img');
-                let sourcetag = popup.querySelector('source');
+                const imgtag = popup.querySelector('img');
+                const sourcetag = popup.querySelector('source');
 
                 const sourceInitial = imgInitial.getAttribute('src');
                 const altInitial = imgInitial.getAttribute('alt');
-                let sourceJpg = imgtag.getAttribute('src');
-                let sourceWebp = sourcetag.getAttribute('srcset');
+                const sourceJpg = imgtag.getAttribute('src');
+                const sourceWebp = sourcetag.getAttribute('srcset');
 
                 return function() {
                     popup.classList.toggle('popup_active');
                     hideScrollBar();
 
-                    let noJpg = sourceJpg.slice(0,-6);
-                    let noWebp = sourceWebp.slice(0,-7);
-                    let num = sourceInitial.slice(-6, -4);
+                    const noJpg = sourceJpg.slice(0,-6);
+                    const noWebp = sourceWebp.slice(0,-7);
+                    const num = sourceInitial.slice(-6, -4);
 
-                    let largesourceJpg = noJpg + num + '-large.jpg';
-                    let largesourceWebp = noWebp + num + '-large.webp';
+                    const largesourceJpg = noJpg + num + '-large.jpg';
+                    const largesourceWebp = noWebp + num + '-large.webp';
 
                     imgtag.src = largesourceJpg;
                     sourcetag.srcset = largesourceWebp;
-
                     imgtag.alt = altInitial;
 
                     document.querySelector('.projects__popup-wrapper picture').style.display = 'block';
