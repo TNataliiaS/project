@@ -3,7 +3,6 @@
 const burgerToggle = document.getElementById('burger');
 const siteNavShow = document.getElementById('site-nav');
 const toggleByLink = document.querySelectorAll('.site-nav__link');
-const headerWrapper = document.getElementById('header__wrapper');
 
 burgerToggle.addEventListener('click', () => {
     burgerToggle.classList.toggle('burger_active');

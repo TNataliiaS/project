@@ -1,14 +1,8 @@
 const popup = document.getElementById('popup');
 const projectsItem = document.querySelectorAll('.projects__item');
 
-const getScrollbarWidth = () => {
-    const scrollbarWidth = Math.max(window.innerWidth - document.documentElement.clientWidth, 0);
-    return `${scrollbarWidth}px`;
-};
-
 function toggleImages() {
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        document.querySelector('.projects__popup-wrapper picture').remove();
 
         for(let j = 0; j < projectsItem.length; j++) {
             const itemSelected = projectsItem[j];
@@ -29,6 +23,8 @@ function toggleImages() {
                 const itemSelectedList = itemSelected.querySelector('.projects__item-list');
                 const newList = document.createElement('ul');
 
+                const one = sourceWebp.slice(0, -8);
+
                 return function() {
                     imgtag.classList.add('projects__popup-img');
                     imgtag.classList.remove('projects__item-img');
@@ -42,17 +38,46 @@ function toggleImages() {
                     newList.replaceWith(itemSelectedList);
                     itemSelectedList.classList.add('projects__popup-list');
 
-                    const noJpg = sourceJpg.slice(0,-6);
-                    const noWebp = sourceWebp.slice(0,-7);
-                    const num = sourceInitial.slice(-6, -4);
-
-                    const largesourceJpg = noJpg + num + '-large.jpg';
-                    const largesourceWebp = noWebp + num + '-large.webp';
-
-                    imgtag.src = largesourceJpg;
-                    sourcetag.srcset = largesourceWebp;
                     imgtag.alt = altInitial;
 
+                    if (one == './assets/images/projects/project-mobile') {
+                        const noJpg = sourceJpg.slice(0,-6);
+                        const noWebp = sourceWebp.slice(0,-7);
+                        const num = sourceInitial.slice(-6, -4);
+
+                        const largesourceJpg = noJpg + 'mobile-' + num + '.jpg';
+                        const largesourceWebp = noWebp + num + '.webp';
+
+                        imgtag.src = largesourceJpg;
+                        sourcetag.srcset = largesourceWebp;
+                    }
+                    // else {
+                        // console.log('no')
+                    //     const noJpg = sourceJpg.slice(0,-6);
+                    //     const noWebp = sourceWebp.slice(0,-7);
+                    //     const num = sourceInitial.slice(-6, -4);
+
+                    //     const largesourceJpg = noJpg + num + '-large.jpg';
+                    //     const largesourceWebp = noWebp + num + '-large.webp';
+
+                    //     imgtag.src = largesourceJpg;
+                    //     sourcetag.srcset = largesourceWebp;
+                    //     imgtag.alt = altInitial;
+                    // }
+
+
+                    // const noJpg = sourceJpg.slice(0,-6);
+                    // const noWebp = sourceWebp.slice(0,-7);
+                    // const num = sourceInitial.slice(-6, -4);
+
+                    // const largesourceJpg = noJpg + num + '-large.jpg';
+                    // const largesourceWebp = noWebp + num + '-large.webp';
+
+                    // imgtag.src = largesourceJpg;
+                    // sourcetag.srcset = largesourceWebp;
+                    // imgtag.alt = altInitial;
+
+                    document.querySelector('.projects__popup-wrapper picture').style.display = 'block';
                     const pictureHeight = document.querySelector('.projects__popup-wrapper picture');
                     const newNum = imgtag.offsetHeight + 'px';
                     pictureHeight.style.height = newNum;

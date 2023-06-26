@@ -7,7 +7,7 @@
         padding: 40px 0;
     }
 
-    @include breakpoint($breakpoint-xxl) {
+    @include breakpoint($breakpoint-xl) {
         padding: 30px 0;
     }
 
@@ -18,12 +18,20 @@
             justify-content: space-between;
         }
 
-        @include breakpoint($breakpoint-md) {
+        @include breakpoint($breakpoint-sm) {
             flex-direction: column;
         }
     }
 
     &__col {
+        display: flex;
+
+        @include breakpoint($breakpoint-lg) {
+            flex-direction: column;
+        }
+    }
+
+    &__logo {
         margin-right: 70px;
 
         @include breakpoint($breakpoint-xxl) {
@@ -31,17 +39,9 @@
         }
 
         @include breakpoint($breakpoint-lg) {
-            margin-right: 40px;
-        }
-
-        @include breakpoint($breakpoint-md) {
             margin-right: 0;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
         }
-    }
-
-    &__logo {
-        margin-bottom: 10px;
     }
 
     &__nav {
@@ -49,36 +49,6 @@
 
         @include breakpoint($breakpoint-md) {
             margin-bottom: 15px;
-        }
-    }
-
-    &__contacts-title,
-    &__nav-link {
-        font-size: 26px;
-        font-weight: 600;
-
-        @include breakpoint($breakpoint-xxl) {
-            font-size: 22px;
-        }
-
-        @include breakpoint($breakpoint-xl) {
-            font-size: 20px;
-        }
-
-        @include breakpoint($breakpoint-md) {
-            font-size: 18px;
-        }
-    }
-
-    &__contacts-title {
-        margin-bottom: 15px;
-
-        @include breakpoint($breakpoint-xxl) {
-            margin-bottom: 10px;
-        }
-
-        @include breakpoint($breakpoint-md) {
-            margin-bottom: 7px;
         }
     }
 
@@ -115,9 +85,12 @@
         margin-left: auto;
         margin-right: 40px;
 
-        @include breakpoint($breakpoint-md) {
-            margin-left: 0;
+        @include breakpoint($breakpoint-lg) {
             margin-right: 0;
+        }
+
+        @include breakpoint($breakpoint-sm) {
+            margin-left: 0;
 
             .social__item {
                 margin-right: 12px;
@@ -145,10 +118,61 @@
     &__contacts-item {
         &:not(:last-child) {
             margin-bottom: 10px;
+        }
+    }
 
-            @include breakpoint($breakpoint-xxl) {
-                margin-bottom: 5px;
+    &__contacts-link {
+        display: inline-block;
+
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+
+        @include breakpoint($breakpoint-lg) {
+            font-size: 14px;
+        }
+
+        @include breakpoint($breakpoint-md) {
+            display: block;
+
+            &:not(:last-child) {
+                margin-right: 0;
+                margin-bottom: 3px;
             }
+        }
+    }
+
+    &__contacts-title,
+    &__nav-link {
+        font-size: 24px;
+        font-weight: 600;
+
+        @include breakpoint($breakpoint-xxxl) {
+            font-size: 22px;
+        }
+
+        @include breakpoint($breakpoint-xxl) {
+            font-size: 20px;
+        }
+
+        @include breakpoint($breakpoint-xl) {
+            font-size: 18px;
+        }
+
+        @include breakpoint($breakpoint-lg) {
+            font-size: 16px;
+        }
+    }
+
+    &__contacts-title {
+        margin-bottom: 15px;
+
+        @include breakpoint($breakpoint-xxl) {
+            margin-bottom: 10px;
+        }
+
+        @include breakpoint($breakpoint-md) {
+            margin-bottom: 7px;
         }
     }
 }

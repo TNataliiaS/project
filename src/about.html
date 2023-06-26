@@ -6,7 +6,7 @@
 <body>
     <div class="page">
         @@include("html/header.html", {
-            "link-about-company": '<a class="header__site-nav-link site-nav__link" href="./index.html">Главная</a>',
+            "link": '<a class="header__site-nav-link site-nav__link" href="./index.html">Главная</a>',
             "link-areas-activity": '<a class="header__site-nav-link site-nav__link smooth-scroll-link" href="#areas-activity">Услуги</a>'
          })
 
@@ -87,7 +87,9 @@
         </main>
 
         @@include("html/footer.html", {
-            "link": '<a class="footer__nav-link" href="./index.html">Главная</a>'
+            "link": '<a class="footer__nav-link" href="./index.html">Главная</a>',
+            "link-areas-activity": '<a class="footer__nav-link smooth-scroll-link" href="#areas-activity">Услуги</a>',
+            "link-projects": '<a class="footer__nav-link smooth-scroll-link" href="./index.html#projects">Проекты</a>'
         })
     </div>
 

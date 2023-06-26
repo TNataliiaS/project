@@ -1,22 +1,8 @@
 .about-intro {
-    padding-top: 100px;
     margin-bottom: 60px;
 
-    @include breakpoint($breakpoint-xxxl) {
-        padding-top: 82px;
-    }
-
     @include breakpoint($breakpoint-xxl) {
-        padding-top: 80px;
         margin-bottom: 40px;
-    }
-
-    @include breakpoint($breakpoint-xl) {
-        padding-top: 64px;
-    }
-
-    @include breakpoint($breakpoint-lg) {
-        padding-top: 62px;
     }
 
     @include breakpoint($breakpoint-md) {
