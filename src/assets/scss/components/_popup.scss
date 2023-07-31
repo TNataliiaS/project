@@ -10,7 +10,7 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 100;
+    z-index: 110;
 
     @extend %pointer-events-none-opacity;
     transition: opacity .3s linear;

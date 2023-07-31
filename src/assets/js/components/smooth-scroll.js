@@ -16,17 +16,6 @@ for(let i = 0; i < links.length; i++) {
             top: offsetPosition,
             behavior: 'smooth'
         });
-
-        // links[i].addEventListener('click', function (event) {
-        //     event.preventDefault();
-
-        //     const blockID = event.target.getAttribute('href').substr(1);
-
-        //     document.getElementById(blockID).scrollIntoView({
-        //         behavior: 'smooth',
-        //         block: 'start',
-        //     });
-        // });
     });
 }
 
