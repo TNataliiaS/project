@@ -225,7 +225,6 @@
 
     &__item-list {
         margin-right: 5px;
-        flex-grow: 1;
         display: none;
 
             &.projects__popup-list  {
@@ -264,6 +263,7 @@
         align-self: flex-end;
         display: flex;
         align-items: flex-end;
+        margin-left: auto;
     }
 
     &__item-icon {
@@ -307,6 +307,7 @@
 
     &__item-time {
         line-height: 1;
+        white-space: nowrap;
 
         @include breakpoint($breakpoint-xl) {
             font-size: 14px;

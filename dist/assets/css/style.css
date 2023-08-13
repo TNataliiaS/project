@@ -821,9 +821,6 @@ button {
 
 .projects__item-list {
   margin-right: 5px;
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
   display: none;
 }
 
@@ -849,6 +846,7 @@ button {
   -webkit-box-align: end;
   -ms-flex-align: end;
   align-items: flex-end;
+  margin-left: auto;
 }
 
 .projects__item-icon {
@@ -860,6 +858,7 @@ button {
 
 .projects__item-time {
   line-height: 1;
+  white-space: nowrap;
 }
 
 .projects__popup-wrapper {
