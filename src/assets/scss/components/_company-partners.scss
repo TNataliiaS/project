@@ -1,36 +1,29 @@
-.areas-activity {
-    &__list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-
-        @include breakpoint($breakpoint-sm) {
-            gap: 15px;
+.company-partners {
+    &__swiper {
+        .swiper-pagination .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
         }
+
+        .swiper-pagination .swiper-pagination-bullet {
+            background: $color-content;
+        }
+    }
+    &__list {
+        padding-bottom: 45px;
     }
 
     &__item {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: calc((100% - 40px) / 3);
-        padding: 30px;
+        height: auto;
+        padding: 20px;
+        user-select: none;
 
         border: 1px solid rgba($color-content, .2);
         border-radius: 2px;
         background-color: rgba(68, 68, 68, .3);
-
-        @include breakpoint($breakpoint-md) {
-            padding: 15px;
-        }
-
-        @include breakpoint($breakpoint-sm) {
-            width: calc((100% - 30px) / 2);
-        }
-
-        @include breakpoint($breakpoint-xs) {
-            width: 100%;
-        }
 
         h3 {
             text-align: center;

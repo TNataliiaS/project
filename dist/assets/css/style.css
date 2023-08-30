@@ -950,6 +950,46 @@ button {
   transform: rotate(-45deg);
 }
 
+.company-partners__swiper .swiper-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+}
+
+.company-partners__swiper .swiper-pagination .swiper-pagination-bullet {
+  background: #FFFDFC;
+}
+
+.company-partners__list {
+  padding-bottom: 45px;
+}
+
+.company-partners__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: auto;
+  padding: 20px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid rgba(255, 253, 252, 0.2);
+  border-radius: 2px;
+  background-color: rgba(68, 68, 68, 0.3);
+}
+
+.company-partners__item h3 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 26px;
+}
+
 .footer {
   margin-top: auto;
   padding: 50px 0;
@@ -1202,7 +1242,9 @@ button {
   align-items: center;
   width: calc((100% - 40px) / 3);
   padding: 30px;
-  background-color: #444;
+  border: 1px solid rgba(255, 253, 252, 0.2);
+  border-radius: 2px;
+  background-color: rgba(68, 68, 68, 0.3);
 }
 
 .areas-activity__item h3 {
@@ -1299,6 +1341,10 @@ button {
   .projects__item-icon {
     width: 60px;
     height: 59.5px;
+  }
+
+  .company-partners__item h3 {
+    font-size: 22px;
   }
 
   .footer__contacts-title,
@@ -1421,6 +1467,10 @@ button {
   .projects__item-icon {
     width: 55px;
     height: 54.5px;
+  }
+
+  .company-partners__item h3 {
+    font-size: 18px;
   }
 
   .footer {
@@ -1568,6 +1618,10 @@ button {
 
   .projects__item-time {
     font-size: 14px;
+  }
+
+  .company-partners__item h3 {
+    font-size: 16px;
   }
 
   .footer {
@@ -1805,6 +1859,10 @@ button {
 
   .projects__item-title {
     font-size: 13px;
+  }
+
+  .company-partners__item h3 {
+    font-size: 14px;
   }
 
   .footer__nav {
