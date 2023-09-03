@@ -1,5 +1,4 @@
 const swiperPartners = new Swiper('.company-partners__swiper', {
-    loop: true,
     slidesPerView: 3,
     spaceBetween: 20,
     speed: 700,
@@ -13,9 +12,17 @@ const swiperPartners = new Swiper('.company-partners__swiper', {
         dynamicBullets: true,
         clickable: true
     },
+    grid: {
+        rows: 2,
+        fill: "row",
+    },
     breakpoints: {
         320: {
             slidesPerView: 1,
+            grid: {
+                rows: 2,
+                fill: "row",
+            },
         },
 
         577: {

@@ -6,5 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
     @@include("components/hide-show-scroll-bar.js")
     @@include("components/smooth-scroll.js")
     @@include("components/menu-toggle.js")
-    @@include("components/toggle-images.js")
+    @@include("./vendor.js")
+    @@include("components/swiper-slider-partners.js")
 });
